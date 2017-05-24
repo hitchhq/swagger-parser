@@ -1,0 +1,15 @@
+**/*~
+**/._*
+**/.DS_Store
+*.sublime-*
+npm-debug.log
+/.idea
+/coverage
+/dist/*.test.js
+/docs
+karma.conf.js
+/tests
+/www
+bower.json
+index.html
+/.*
