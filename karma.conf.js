@@ -16,11 +16,11 @@ var baseConfig = {
     {pattern: 'dist/*.map', included: false, served: true},
 
     // Test Fixtures
-    'tests/fixtures/**/*.js',
+    'test/fixtures/**/*.js',
 
     // Tests
-    'tests/specs/**/*.js',
-    {pattern: 'tests/specs/**', included: false, served: true}
+    'test/specs/**/*.js',
+    {pattern: 'test/specs/**', included: false, served: true}
   ]
 };
 
@@ -90,13 +90,13 @@ function configureLocalBrowsers(config) {
       isLinux   = !(isMac || isWindows);
 
   if (isMac) {
-    config.browsers = ['PhantomJS', 'Firefox', 'Chrome', 'Safari'];
+    config.browsers = ['Firefox', 'Chrome', 'Safari'];
   }
   else if (isLinux) {
-    config.browsers = ['PhantomJS', 'Firefox'];
+    config.browsers = ['Firefox'];
   }
   else if (isWindows) {
-    config.browsers = ['PhantomJS', 'Firefox', 'Chrome', 'Safari', 'IE9', 'IE10', 'IE'];
+    config.browsers = ['Firefox', 'Chrome', 'Safari', 'IE9', 'IE10', 'IE'];
     config.customLaunchers = {
       // NOTE: IE 6, 7, 8 are not supported by Chai
       IE9: {
@@ -166,10 +166,10 @@ function configureSauceLabs(config) {
   // For some reason, these tests seem to make SauceLabs unstable,
   // and it frequently loses connection to the CI server, which causes the build to fail
   config.exclude = (config.exclude || []).concat([
-    'tests/specs/invalid/*',
-    'tests/specs/unknown/*',
-    'tests/specs/validate-schema/*',
-    'tests/specs/real-world/*'
+    'test/specs/invalid/*',
+    'test/specs/unknown/*',
+    'test/specs/validate-schema/*',
+    'test/specs/real-world/*'
   ]);
 
   config.reporters.push('saucelabs');
